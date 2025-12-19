@@ -92,4 +92,3 @@ All components are modular and can be easily customized. Brand colors are define
 ## License
 
 © 2024 Next Ignition. All rights reserved.
-
