@@ -21,7 +21,7 @@ export default function About() {
                 Founded by <strong>Sanket</strong> to empower early-stage founders, Next Ignition solves real startup challenges with mentorship, AI, and a global community.
               </p>
               <p>
-                We're here to help founders grow smarter and faster. Our platform brings together founders, experts, investors, and service providers in one place, making it easier than ever to turn your startup idea into reality.
+                We&apos;re here to help founders grow smarter and faster. Our platform brings together founders, experts, investors, and service providers in one place, making it easier than ever to turn your startup idea into reality.
               </p>
               <p>
                 With AI-powered matching, comprehensive tools, and a supportive community, Next Ignition is your partner in the startup journey—from idea to launch and beyond.
@@ -78,7 +78,7 @@ export default function About() {
             <div className="bg-gradient-to-br from-navy-blue to-electric-blue rounded-2xl p-12 text-white">
               <h3 className="text-3xl font-bold mb-6">Our Vision</h3>
               <p className="text-lg leading-relaxed mb-6">
-                To become the world's leading platform for early-stage founders, where every startup idea has the resources, mentorship, and community support needed to succeed.
+                To become the world&apos;s leading platform for early-stage founders, where every startup idea has the resources, mentorship, and community support needed to succeed.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">

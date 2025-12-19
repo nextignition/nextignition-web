@@ -73,7 +73,7 @@ export default function AITools() {
 
                 <div className="bg-navy-blue/5 p-4 rounded-lg mb-6 relative z-10">
                   <p className="text-sm text-gray-700 italic">
-                    "{tool.example}"
+                    &quot;{tool.example}&quot;
                   </p>
                 </div>
 
