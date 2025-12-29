@@ -113,7 +113,7 @@ const UserRolesSection = () => {
                 </ul>
 
                 <a
-                  href="https://nextignition-app.vercel.app/(auth)/register"
+                  href="https://app.nextignition.com/(auth)/register"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`inline-flex items-center gap-2 text-sm font-semibold transition-colors ${

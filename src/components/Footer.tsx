@@ -147,7 +147,7 @@ const Footer = () => {
             © 2025 NextIgnition. All rights reserved.
           </p>
           <a
-            href="https://nextignition-app.vercel.app/(auth)/register"
+            href="https://app.nextignition.com/(auth)/register"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary-dark transition-colors group"

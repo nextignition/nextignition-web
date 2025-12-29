@@ -107,7 +107,7 @@ const PricingSection = () => {
               </ul>
 
               <a
-                href="https://nextignition-app.vercel.app/(auth)/register"
+                href="https://app.nextignition.com/(auth)/register"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`w-full inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold transition-all duration-300 group ${

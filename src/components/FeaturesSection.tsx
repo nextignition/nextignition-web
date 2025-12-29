@@ -106,7 +106,7 @@ const FeaturesSection = () => {
               </ul>
             </div>
             <a
-              href="https://nextignition-app.vercel.app/(auth)/register"
+              href="https://app.nextignition.com/(auth)/register"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-accent text-accent-foreground font-semibold hover:bg-accent/90 shadow-accent transition-all duration-300 group whitespace-nowrap"

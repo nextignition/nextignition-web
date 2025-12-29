@@ -73,7 +73,7 @@ const AIToolsSection = () => {
                 </p>
 
                 <a
-                  href="https://nextignition-app.vercel.app/(auth)/register"
+                  href="https://app.nextignition.com/(auth)/register"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary-dark transition-colors group/link"
@@ -89,7 +89,7 @@ const AIToolsSection = () => {
         {/* CTA Banner */}
         <div className="mt-16 text-center">
           <a
-            href="https://nextignition-app.vercel.app/(auth)/register"
+            href="https://app.nextignition.com/(auth)/register"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold hover:bg-primary-dark shadow-brand transition-all duration-300 group"

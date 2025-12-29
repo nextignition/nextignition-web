@@ -39,7 +39,7 @@ const HeroSection = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in-up animation-delay-300">
             <a
-              href="https://nextignition-app.vercel.app/(auth)/register"
+              href="https://app.nextignition.com/(auth)/register"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-accent text-accent-foreground font-semibold text-lg hover:bg-accent/90 shadow-accent transition-all duration-300 group"
@@ -48,7 +48,7 @@ const HeroSection = () => {
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
             <a
-              href="https://nextignition-app.vercel.app/(auth)/register"
+              href="https://app.nextignition.com/(auth)/register"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-background/10 backdrop-blur-sm border-2 border-primary-foreground/30 text-primary-foreground font-semibold text-lg hover:bg-background/20 transition-all duration-300 group"
