@@ -5,9 +5,11 @@ import logo from "@/assets/logo.png";
 const navLinks = [
   { label: "Features", href: "#features" },
   { label: "How it Works", href: "#how-it-works" },
-  { label: "Roles", href: "#roles" },
+  { label: "AI Tools", href: "#ai-tools" },
+  { label: "Community", href: "#industry-community" },
+  { label: "Webinars", href: "#webinars" },
   { label: "Pricing", href: "#pricing" },
-  { label: "FAQ", href: "#faq" },
+  { label: "About", href: "#about" },
 ];
 
 const Header = () => {

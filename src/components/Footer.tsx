@@ -4,15 +4,23 @@ import logoSecondary from "@/assets/logo-secondary.png";
 const footerLinks = {
   product: [
     { label: "Features", href: "#features" },
-    { label: "Pricing", href: "#pricing" },
+    { label: "How it Works", href: "#how-it-works" },
     { label: "AI Tools", href: "#ai-tools" },
-    { label: "Webinars", href: "#" },
+    { label: "Webinars", href: "#webinars" },
+    { label: "Pricing", href: "#pricing" },
+  ],
+  resources: [
+    { label: "Industry Community", href: "#industry-community" },
+    { label: "Growth Tracking", href: "#growth-tracking" },
+    { label: "Security", href: "#security" },
+    { label: "Testimonials", href: "#testimonials" },
+    { label: "Why Choose Us", href: "#why-choose" },
   ],
   company: [
     { label: "About", href: "#about" },
-    { label: "Blog", href: "#" },
-    { label: "Careers", href: "#" },
-    { label: "Contact", href: "#contact" },
+    { label: "Roles", href: "#roles" },
+    { label: "After Signup", href: "#after-signup" },
+    { label: "FAQ", href: "#faq" },
   ],
   legal: [
     { label: "Privacy Policy", href: "/privacy-policy" },
@@ -62,7 +70,7 @@ const Footer = () => {
 
       {/* Main Footer */}
       <div className="container py-16">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 lg:gap-12">
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-8 lg:gap-12">
           {/* Brand */}
           <div className="col-span-2">
             <a href="/" className="flex items-center gap-2 mb-6">
@@ -94,6 +102,23 @@ const Footer = () => {
             <h4 className="font-semibold text-navy-foreground mb-4">Product</h4>
             <ul className="space-y-3">
               {footerLinks.product.map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    className="text-navy-foreground/70 hover:text-navy-foreground transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Resources Links */}
+          <div>
+            <h4 className="font-semibold text-navy-foreground mb-4">Resources</h4>
+            <ul className="space-y-3">
+              {footerLinks.resources.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
