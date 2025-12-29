@@ -22,9 +22,9 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: Linkedin, href: "https://linkedin.com/company/nextignition", label: "LinkedIn" },
-  { icon: Twitter, href: "https://twitter.com/nextignition", label: "Twitter" },
-  { icon: Instagram, href: "https://instagram.com/nextignition", label: "Instagram" },
+  { icon: Linkedin, href: "https://www.linkedin.com/company/nextignition-official/", label: "LinkedIn" },
+  { icon: Twitter, href: "https://x.com/next_ignition?s=11", label: "Twitter" },
+  { icon: Instagram, href: "https://www.instagram.com/next.ignition?igsh=ZnZ4N2ZmdHJvMHpo&utm_source=qr", label: "Instagram" },
 ];
 
 const Footer = () => {

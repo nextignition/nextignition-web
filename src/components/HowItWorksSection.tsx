@@ -4,22 +4,22 @@ const steps = [
   {
     step: "01",
     title: "Sign Up & Create Your Profile",
-    description: "Choose your role Founder, Expert, Investor, or Agency and complete your profile in minutes.",
+    description: "Choose your role and build your professional profile in minutes. Select role: Founder, Expert, Investor, or Agency. Complete your profile with skills and experience. Set your preferences and goals.",
   },
   {
     step: "02",
     title: "Post Your Startup Idea or Challenge",
-    description: "Share what you're working on or what help you need. Our community is here to support you.",
+    description: "Share what you're working on or need help with. Post your startup idea or business challenge. Describe your needs and goals. Set visibility preferences.",
   },
   {
     step: "03",
-    title: "Get AI-Matched with Experts",
-    description: "Our AI analyzes your needs and matches you with the most relevant experts and resources.",
+    title: "Get Matched with Experts & Resources (AI Powered)",
+    description: "Our AI finds the perfect experts and resources for you. AI analyzes your needs and matches you with relevant experts. Browse curated expert profiles. Access relevant resources and tools.",
   },
   {
     step: "04",
-    title: "Book, Learn & Grow",
-    description: "Schedule consultations, join webinars, and take action to accelerate your startup journey.",
+    title: "Book Consults, Join Webinars, and Grow Your Startup",
+    description: "Take action and accelerate your growth. Schedule 1 on 1 consultations with experts. Join live webinars and events. Track your progress and milestones.",
   },
 ];
 

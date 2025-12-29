@@ -1,35 +1,45 @@
-import { Waypoints, Network, CalendarClock, Wand2, Radio, Repeat2, ArrowRight, TrendingUp, ShieldCheck, Gauge, ChevronRight } from "lucide-react";
+import { Waypoints, Network, CalendarClock, Wand2, Radio, Repeat2, ArrowRight, TrendingUp, ShieldCheck, Gauge, ChevronRight, MessageSquare, HelpCircle } from "lucide-react";
 
 const features = [
   {
     icon: Waypoints,
-    title: "AI-Powered Expert Matching",
-    description: "Get matched with the right experts for your specific startup needs using intelligent algorithms.",
+    title: "AI Powered Expert Matching",
+    description: "Find the perfect expert for your needs. Our intelligent matching algorithm analyzes your startup needs and matches you with relevant experts, filtered by industry, expertise, and availability.",
   },
   {
     icon: Network,
-    title: "Business-Only Community Feed",
-    description: "Connect with founders and experts in a focused, professional environment without noise.",
+    title: "Business Only Community Feed",
+    description: "Connect with like minded entrepreneurs in a professional environment. Real time updates from founders and experts, filter by Industry, Startup Stage, and Location. No spam, only business content.",
   },
   {
     icon: CalendarClock,
-    title: "Seamless Booking System",
-    description: "Schedule consultations and mentorship sessions with industry experts effortlessly.",
+    title: "Founder Expert Booking System",
+    description: "Schedule consultations seamlessly. Browse available experts, book 1 on 1 sessions, manage your calendar, set session duration and topics with automatic reminders and confirmations.",
   },
   {
     icon: Wand2,
     title: "AI Tools Suite",
-    description: "Startup Summary Generator, Profile Summarizer, and Pitch Deck Summarizer at your fingertips.",
+    description: "Powerful AI tools to accelerate your startup. Startup Summary Generator transforms ideas into investor ready summaries. Profile Summarizer optimizes profiles for maximum visibility. Pitch Deck Summarizer extracts key highlights automatically.",
   },
   {
     icon: Radio,
     title: "Webinars & Events",
-    description: "Learn from experts and network with the community through curated live sessions.",
+    description: "Learn from industry leaders. Live webinars with experts, recorded sessions library, networking events, interactive Q&A sessions, and auto reminders for registered events.",
   },
   {
     icon: Repeat2,
-    title: "Switch Roles Seamlessly",
-    description: "Switch between Founder, Expert, Investor, and Agency roles with one click.",
+    title: "Switch Role Feature",
+    description: "One account, multiple roles. Seamlessly switch between Founder, Expert, Investor, and Agency roles with one click. Maintain separate profiles for each role and access role specific features instantly.",
+  },
+  {
+    icon: MessageSquare,
+    title: "Real Time Messaging & Notifications",
+    description: "Stay connected and informed. In app messaging system, internal email notifications, real time updates, push notifications, and never miss important updates.",
+  },
+  {
+    icon: HelpCircle,
+    title: "In App Support & Feedback",
+    description: "Get help when you need it. 24/7 in app support, quick feedback system, help center with FAQs, direct contact with support team, and community driven solutions.",
   },
 ];
 
@@ -50,7 +60,7 @@ const FeaturesSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {features.map((feature, index) => (
             <div
               key={feature.title}

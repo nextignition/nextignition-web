@@ -4,19 +4,19 @@ const aiTools = [
   {
     icon: BrainCircuit,
     title: "Startup Summary Generator",
-    description: "Transform your complex startup idea into a compelling, investor ready summary in seconds.",
+    description: "Transform your complex startup idea into a compelling, investor ready summary in seconds. Input your startup idea and get a concise, professional summary optimized for investor pitches. Save time and improve clarity.",
     example: "\"Turn your 10 page plan into a punchy 2 paragraph pitch\"",
   },
   {
     icon: UserRoundPen,
     title: "Profile Summarizer",
-    description: "Create optimized profiles that attract investors and increase your visibility in the ecosystem.",
+    description: "Create compelling profiles automatically. Transform your profile for maximum visibility, optimize for investor appeal, highlight key achievements, and get professional formatting.",
     example: "\"Highlight your strengths for maximum impact\"",
   },
   {
     icon: FileSliders,
     title: "Pitch Deck Summarizer",
-    description: "Get key highlights and actionable feedback on your pitch deck from our AI analysis.",
+    description: "Extract insights from your pitch deck. Upload your pitch deck and get key highlights automatically. Identify strengths and gaps, and generate executive summaries.",
     example: "\"Know your deck's strengths and weaknesses\"",
   },
 ];

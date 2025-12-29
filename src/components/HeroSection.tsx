@@ -36,6 +36,15 @@ const HeroSection = () => {
             NextIgnition helps founders grow from idea to launch. Connect with experts, get mentorship, build your MVP, and raise funding all on one platform.
           </p>
 
+          {/* Value Propositions */}
+          <div className="flex flex-wrap items-center justify-center gap-6 mb-12 animate-fade-in-up animation-delay-250">
+            <span className="text-sm font-medium text-primary-foreground/90">AI Powered Matching</span>
+            <div className="hidden sm:block w-px h-6 bg-primary-foreground/20"></div>
+            <span className="text-sm font-medium text-primary-foreground/90">All in One Platform</span>
+            <div className="hidden sm:block w-px h-6 bg-primary-foreground/20"></div>
+            <span className="text-sm font-medium text-primary-foreground/90">Global Community</span>
+          </div>
+
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in-up animation-delay-300">
             <a
@@ -55,6 +64,14 @@ const HeroSection = () => {
             >
               Join as Expert
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </a>
+            <a
+              href="https://app.nextignition.com/(auth)/register"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl text-primary-foreground font-medium text-lg hover:text-primary-foreground/80 transition-all duration-300"
+            >
+              Request a Demo
             </a>
           </div>
 
