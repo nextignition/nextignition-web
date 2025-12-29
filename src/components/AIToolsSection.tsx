@@ -48,16 +48,27 @@ const AIToolsSection = () => {
           {aiTools.map((tool, index) => (
             <div
               key={tool.title}
-              className="group relative bg-gradient-to-br from-card to-background rounded-2xl p-8 border border-border card-hover overflow-hidden"
+              className="group relative bg-gradient-to-br from-card to-background rounded-3xl p-8 border-2 border-border/30 card-hover card-tilt card-shimmer overflow-hidden card-reveal"
+              style={{ animationDelay: `${index * 120}ms` }}
             >
-              {/* Shimmer effect */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+              {/* Animated gradient border */}
+              <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/20 via-accent/10 to-primary/20" style={{
+                  backgroundSize: '200% 200%',
+                  animation: 'gradient 6s ease infinite'
+                }}></div>
               </div>
 
               <div className="relative z-10">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center mb-6 shadow-brand">
-                  <tool.icon className="w-8 h-8 text-primary-foreground" />
+                {/* Icon with 3D effect */}
+                <div className="relative w-16 h-16 mb-6">
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center shadow-brand transform group-hover:rotate-y-12 group-hover:scale-110 transition-all duration-500" style={{
+                    transformStyle: 'preserve-3d'
+                  }}>
+                    <tool.icon className="w-8 h-8 text-primary-foreground transform group-hover:scale-110 transition-transform duration-500" />
+                  </div>
+                  {/* Glow ring */}
+                  <div className="absolute -inset-2 rounded-2xl bg-primary/20 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500"></div>
                 </div>
 
                 <h3 className="text-xl font-display font-semibold text-foreground mb-3">

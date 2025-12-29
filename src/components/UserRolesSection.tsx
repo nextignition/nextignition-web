@@ -60,26 +60,48 @@ const UserRolesSection = () => {
           {roles.map((role, index) => (
             <div
               key={role.role}
-              className="group bg-background rounded-2xl p-8 border border-border card-hover relative overflow-hidden"
+              className="group bg-background rounded-3xl p-8 border-2 border-border/30 card-hover card-tilt card-shimmer relative overflow-hidden card-reveal"
+              style={{ animationDelay: `${index * 100}ms` }}
             >
-              {/* Gradient overlay on hover */}
-              <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
-                role.color === "primary" ? "bg-gradient-to-br from-primary/5 to-transparent" :
-                role.color === "accent" ? "bg-gradient-to-br from-accent/5 to-transparent" :
-                "bg-gradient-to-br from-navy/5 to-transparent"
+              {/* Animated gradient mesh background */}
+              <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ${
+                role.color === "primary" ? "bg-gradient-to-br from-primary/10 via-primary/5 to-transparent" :
+                role.color === "accent" ? "bg-gradient-to-br from-accent/10 via-accent/5 to-transparent" :
+                "bg-gradient-to-br from-navy/10 via-navy/5 to-transparent"
+              }`} style={{
+                backgroundSize: '200% 200%',
+                animation: 'gradient 8s ease infinite'
+              }}></div>
+              
+              {/* Corner decoration */}
+              <div className={`absolute -top-1 -right-1 w-24 h-24 rounded-bl-full opacity-0 group-hover:opacity-100 transition-all duration-500 ${
+                role.color === "primary" ? "bg-primary/20" :
+                role.color === "accent" ? "bg-accent/20" :
+                "bg-navy/20"
               }`}></div>
               
               <div className="relative z-10">
-                <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 ${
-                  role.color === "primary" ? "bg-primary/10 group-hover:bg-primary" :
-                  role.color === "accent" ? "bg-accent/10 group-hover:bg-accent" :
-                  "bg-navy/10 group-hover:bg-navy"
-                }`}>
-                  <role.icon className={`w-8 h-8 transition-colors duration-300 ${
-                    role.color === "primary" ? "text-primary group-hover:text-primary-foreground" :
-                    role.color === "accent" ? "text-accent group-hover:text-accent-foreground" :
-                    "text-navy group-hover:text-navy-foreground"
-                  }`} />
+                <div className="relative w-16 h-16 mb-6">
+                  {/* Icon background with rotation */}
+                  <div className={`absolute inset-0 rounded-2xl flex items-center justify-center transition-all duration-500 ${
+                    role.color === "primary" ? "bg-primary/10 group-hover:bg-primary group-hover:rotate-12" :
+                    role.color === "accent" ? "bg-accent/10 group-hover:bg-accent group-hover:rotate-12" :
+                    "bg-navy/10 group-hover:bg-navy group-hover:rotate-12"
+                  }`} style={{
+                    transform: 'perspective(1000px) rotateY(0deg)',
+                  }}>
+                    <role.icon className={`w-8 h-8 transition-all duration-500 ${
+                      role.color === "primary" ? "text-primary group-hover:text-primary-foreground group-hover:scale-110" :
+                      role.color === "accent" ? "text-accent group-hover:text-accent-foreground group-hover:scale-110" :
+                      "text-navy group-hover:text-navy-foreground group-hover:scale-110"
+                    }`} />
+                  </div>
+                  {/* Glow effect */}
+                  <div className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500 ${
+                    role.color === "primary" ? "bg-primary/30" :
+                    role.color === "accent" ? "bg-accent/30" :
+                    "bg-navy/30"
+                  }`}></div>
                 </div>
 
                 <div className="mb-4">
@@ -101,13 +123,22 @@ const UserRolesSection = () => {
 
                 <ul className="space-y-2 mb-8">
                   {role.benefits.map((benefit) => (
-                    <li key={benefit} className="flex items-center gap-2 text-sm text-foreground">
-                      <div className={`w-1.5 h-1.5 rounded-full ${
+                    <li 
+                      key={benefit} 
+                      className="group flex items-center gap-3 p-2 rounded-lg bg-background/50 hover:bg-primary/5 transition-all duration-300 border border-transparent hover:border-primary/20"
+                    >
+                      <div className={`w-2 h-2 rounded-full flex-shrink-0 group-hover:scale-125 transition-transform duration-300 shadow-sm ${
                         role.color === "primary" ? "bg-primary" :
                         role.color === "accent" ? "bg-accent" :
                         "bg-navy"
                       }`}></div>
-                      {benefit}
+                      <span className={`text-sm font-medium group-hover:text-primary transition-colors duration-300 ${
+                        role.color === "primary" ? "text-foreground" :
+                        role.color === "accent" ? "text-foreground" :
+                        "text-foreground"
+                      }`}>
+                        {benefit}
+                      </span>
                     </li>
                   ))}
                 </ul>

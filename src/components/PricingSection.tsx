@@ -96,13 +96,26 @@ const PricingSection = () => {
                 </span>
               </div>
 
-              <ul className="space-y-4 mb-10">
+              <ul className="space-y-3 mb-10">
                 {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-3">
-                    <Check className={`w-5 h-5 mt-0.5 flex-shrink-0 ${
-                      plan.highlighted ? "text-accent" : "text-primary"
-                    }`} />
-                    <span className={plan.highlighted ? "text-primary-foreground/90" : "text-foreground"}>
+                  <li 
+                    key={feature} 
+                    className="group flex items-start gap-3 p-2.5 rounded-lg bg-background/30 hover:bg-primary/5 transition-all duration-300 border border-transparent hover:border-primary/20"
+                  >
+                    <div className={`w-5 h-5 rounded-md flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
+                      plan.highlighted 
+                        ? "bg-accent/20 group-hover:bg-accent" 
+                        : "bg-primary/20 group-hover:bg-primary"
+                    }`}>
+                      <Check className={`w-3.5 h-3.5 group-hover:scale-110 transition-transform duration-300 ${
+                        plan.highlighted 
+                          ? "text-accent group-hover:text-accent-foreground" 
+                          : "text-primary group-hover:text-primary-foreground"
+                      }`} />
+                    </div>
+                    <span className={`text-sm font-medium leading-relaxed group-hover:text-primary transition-colors duration-300 ${
+                      plan.highlighted ? "text-primary-foreground/90" : "text-foreground"
+                    }`}>
                       {feature}
                     </span>
                   </li>

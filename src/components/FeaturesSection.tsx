@@ -55,29 +55,55 @@ const FeaturesSection = () => {
             Everything You Need to{" "}
             <span className="text-gradient">Launch & Scale</span>
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Built for founders who want to move fast. Access powerful tools, connect with experts, and grow your startup all in one platform.
           </p>
+        </div>
+
+        {/* Feature count badge */}
+        <div className="flex items-center justify-center gap-2 mb-12">
+          <div className="h-px w-12 bg-border"></div>
+          <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">8 Core Features</span>
+          <div className="h-px w-12 bg-border"></div>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {features.map((feature, index) => (
             <div
               key={feature.title}
-              className="group relative bg-background rounded-xl p-8 border border-border card-hover cursor-pointer"
+              className="group relative bg-card rounded-3xl p-8 md:p-10 border-2 border-border/30 card-hover card-tilt card-shimmer relative overflow-hidden card-reveal"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
-                <feature.icon className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
+              {/* Animated background mesh */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-primary/10 rounded-3xl" style={{
+                  backgroundSize: '200% 200%',
+                  animation: 'gradient 8s ease infinite'
+                }}></div>
               </div>
-              <h3 className="text-xl font-display font-semibold text-foreground mb-3">
-                {feature.title}
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                {feature.description}
-              </p>
-              <div className="absolute bottom-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <ArrowRight className="w-5 h-5 text-primary" />
+              
+              {/* Corner accent with animation */}
+              <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-primary/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transform group-hover:scale-110 transition-all duration-500"></div>
+              
+              <div className="relative z-10">
+                {/* Number and line section - matching HowItWorks style */}
+                <div className="flex items-center gap-4 mb-6">
+                  <span className="text-5xl font-display font-bold text-primary/20 group-hover:text-primary/40 transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-6">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <div className="relative h-px flex-1">
+                    <div className="absolute left-0 w-12 h-px bg-primary/30 group-hover:w-full transition-all duration-500"></div>
+                    <div className="absolute left-0 w-0 h-px bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-700 delay-100"></div>
+                  </div>
+                </div>
+                
+                {/* Title and description */}
+                <h3 className="text-xl font-display font-semibold text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
+                  {feature.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">
+                  {feature.description}
+                </p>
               </div>
             </div>
           ))}
