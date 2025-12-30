@@ -5,6 +5,28 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-padding-top: 5rem; /* 80px for mobile header */
+    scroll-behavior: smooth;
+  }
+  
+  @media (min-width: 768px) {
+    html {
+      scroll-padding-top: 6rem; /* 96px for desktop header */
+    }
+  }
+
+  /* Add scroll margin to all sections for proper offset */
+  section[id] {
+    scroll-margin-top: 5rem; /* 80px for mobile */
+  }
+  
+  @media (min-width: 768px) {
+    section[id] {
+      scroll-margin-top: 6rem; /* 96px for desktop */
+    }
+  }
+
   :root {
     /* NextIgnition Brand Colors */
     --primary: 240 100% 70%;
