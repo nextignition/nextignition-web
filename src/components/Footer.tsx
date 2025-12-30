@@ -1,4 +1,4 @@
-import { Linkedin, Twitter, Instagram, ArrowRight } from "lucide-react";
+import { Linkedin, Instagram, ArrowRight } from "lucide-react";
 import logoSecondary from "@/assets/logo-secondary.png";
 
 const footerLinks = {
@@ -31,7 +31,7 @@ const footerLinks = {
 
 const socialLinks = [
   { icon: Linkedin, href: "https://www.linkedin.com/company/nextignition-official/", label: "LinkedIn" },
-  { icon: Twitter, href: "https://x.com/next_ignition?s=11", label: "Twitter" },
+  { icon: "X", href: "https://x.com/next_ignition?s=11", label: "X" },
   { icon: Instagram, href: "https://www.instagram.com/next.ignition?igsh=ZnZ4N2ZmdHJvMHpo&utm_source=qr", label: "Instagram" },
 ];
 
@@ -89,7 +89,11 @@ const Footer = () => {
                   className="group relative w-11 h-11 rounded-xl bg-navy-foreground/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/20"
                   aria-label={social.label}
                 >
-                  <social.icon className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
+                  {typeof social.icon === 'string' ? (
+                    <span className="text-lg font-bold transition-transform duration-300 group-hover:scale-110">{social.icon}</span>
+                  ) : (
+                    <social.icon className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
+                  )}
                   {/* Glow effect on hover */}
                   <div className="absolute inset-0 rounded-xl bg-primary/20 opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-300"></div>
                 </a>
