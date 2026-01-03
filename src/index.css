@@ -6,24 +6,24 @@
 
 @layer base {
   html {
-    scroll-padding-top: 5rem; /* 80px for mobile header */
+    scroll-padding-top: 6rem; /* 96px for mobile header - increased for better visibility */
     scroll-behavior: smooth;
   }
   
   @media (min-width: 768px) {
     html {
-      scroll-padding-top: 6rem; /* 96px for desktop header */
+      scroll-padding-top: 7rem; /* 112px for desktop header - increased for better visibility */
     }
   }
 
   /* Add scroll margin to all sections for proper offset */
   section[id] {
-    scroll-margin-top: 5rem; /* 80px for mobile */
+    scroll-margin-top: 6rem; /* 96px for mobile - increased for better visibility */
   }
   
   @media (min-width: 768px) {
     section[id] {
-      scroll-margin-top: 6rem; /* 96px for desktop */
+      scroll-margin-top: 7rem; /* 112px for desktop - increased for better visibility */
     }
   }
 

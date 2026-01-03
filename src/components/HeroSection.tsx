@@ -2,7 +2,7 @@ import { ArrowRight, UsersRound, Bolt } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center pt-20 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+    <section className="relative min-h-screen flex items-center pt-20 pb-24 md:pt-32 md:pb-24 overflow-hidden">
       {/* Background Gradient */}
       <div className="absolute inset-0 gradient-hero"></div>
       
@@ -37,7 +37,7 @@ const HeroSection = () => {
           </p>
 
           {/* Value Propositions */}
-          <div className="flex flex-wrap items-center justify-center gap-6 mb-12 animate-fade-in-up animation-delay-250">
+          <div className="flex flex-wrap items-center justify-center gap-6 mb-8 md:mb-12 animate-fade-in-up animation-delay-250">
             <span className="text-sm font-medium text-primary-foreground/90">AI Powered Matching</span>
             <div className="hidden sm:block w-px h-6 bg-primary-foreground/20"></div>
             <span className="text-sm font-medium text-primary-foreground/90">All in One Platform</span>
@@ -94,7 +94,7 @@ const HeroSection = () => {
           </div>
 
           {/* Social Proof */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-primary-foreground/70 animate-fade-in-up animation-delay-400">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-primary-foreground/70 animate-fade-in-up animation-delay-400 mb-8 md:mb-0">
             <div className="flex items-center gap-3">
               <div className="flex -space-x-2">
                 {["SC", "MJ", "ER", "AK"].map((initials, i) => (
@@ -127,7 +127,7 @@ const HeroSection = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-20">
         <div className="w-6 h-10 rounded-full border-2 border-primary-foreground/30 flex items-start justify-center p-2">
           <div className="w-1.5 h-3 bg-primary-foreground/50 rounded-full animate-pulse"></div>
         </div>
