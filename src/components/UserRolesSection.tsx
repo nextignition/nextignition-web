@@ -30,11 +30,11 @@ const roles = [
   },
   {
     icon: Building,
-    role: "Agency",
-    tagline: "Offer solutions and integrate with founders",
-    description: "Showcase your services. Connect with founders who need your solutions. Integrate with startup workflows. Build your client base. Get featured in marketplace. Access to qualified leads. Direct booking system.",
-    benefits: ["Qualified leads", "Direct integration", "Service marketplace", "Client management tools", "Growth opportunities"],
-    cta: "Join as Agency",
+    role: "Co-founder",
+    tagline: "Find your perfect co-founder match",
+    description: "Connect with potential co-founders who complement your skills. Find technical, business, or creative partners. Build your founding team. Share equity and responsibilities. Access co-founder matching tools. Join co-founder networking events.",
+    benefits: ["Co-founder matching", "Skill complement matching", "Equity planning tools", "Team building resources", "Networking opportunities"],
+    cta: "Join as Co-founder",
     color: "primary",
   },
 ];
@@ -52,7 +52,7 @@ const UserRolesSection = () => {
             <span className="text-gradient">Four Powerful Roles</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Whether you're building, advising, investing, or serving startups NextIgnition has a place for you.
+            Whether you're building, advising, investing, or finding a co-founder NextIgnition has a place for you.
           </p>
         </div>
 
@@ -121,7 +121,7 @@ const UserRolesSection = () => {
                   {role.description}
                 </p>
 
-                <ul className="space-y-2 mb-8">
+                <ul className="space-y-2">
                   {role.benefits.map((benefit) => (
                     <li 
                       key={benefit} 
@@ -142,22 +142,30 @@ const UserRolesSection = () => {
                     </li>
                   ))}
                 </ul>
-
-                <a
-                  href="https://app.nextignition.com/(auth)/register"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`inline-flex items-center gap-2 text-sm font-semibold transition-colors ${
-                    role.color === "primary" ? "text-primary hover:text-primary-dark" :
-                    role.color === "accent" ? "text-accent hover:text-accent/80" :
-                    "text-navy hover:text-navy-muted"
-                  }`}
-                >
-                  {role.cta}
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </a>
               </div>
             </div>
+          ))}
+        </div>
+
+        {/* CTA Buttons - All aligned horizontally */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12 md:mt-16">
+          {roles.map((role) => (
+            <a
+              key={role.role}
+              href="https://app.nextignition.com/(auth)/register"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`w-full sm:w-auto sm:min-w-[180px] inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-base transition-all duration-300 group ${
+                role.color === "primary" 
+                  ? "bg-primary text-primary-foreground hover:bg-primary-dark shadow-brand" 
+                  : role.color === "accent"
+                  ? "bg-accent text-accent-foreground hover:bg-accent/90 shadow-accent"
+                  : "bg-navy text-navy-foreground hover:bg-navy/90 shadow-lg"
+              }`}
+            >
+              {role.cta}
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </a>
           ))}
         </div>
       </div>

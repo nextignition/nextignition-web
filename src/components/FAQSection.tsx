@@ -4,7 +4,7 @@ import { ChevronDown } from "lucide-react";
 const faqs = [
   {
     question: "How do I get started with NextIgnition?",
-    answer: "Simply sign up for a free account, choose your role (Founder, Expert, Investor, or Agency), and complete your profile. You'll immediately have access to our community, AI tools, and expert matching features.",
+    answer: "Simply sign up for a free account, choose your role (Founder, Expert, Investor, or Co-founder), and complete your profile. You'll immediately have access to our community, AI tools, and expert matching features.",
   },
   {
     question: "Is NextIgnition really free?",
@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     question: "Can I switch between roles?",
-    answer: "Absolutely! NextIgnition allows you to seamlessly switch between Founder, Expert, Investor, and Agency roles with a single click. Many of our users wear multiple hats and need this flexibility.",
+    answer: "Absolutely! NextIgnition allows you to seamlessly switch between Founder, Expert, Investor, and Co-founder roles with a single click. Many of our users wear multiple hats and need this flexibility.",
   },
   {
     question: "How do consultations work?",

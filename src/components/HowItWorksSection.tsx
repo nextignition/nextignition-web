@@ -4,7 +4,7 @@ const steps = [
   {
     step: "01",
     title: "Sign Up & Create Your Profile",
-    description: "Choose your role and build your professional profile in minutes. Select role: Founder, Expert, Investor, or Agency. Complete your profile with skills and experience. Set your preferences and goals.",
+    description: "Choose your role and build your professional profile in minutes. Select role: Founder, Expert, Investor, or Co-founder. Complete your profile with skills and experience. Set your preferences and goals.",
   },
   {
     step: "02",

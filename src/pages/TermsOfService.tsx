@@ -68,7 +68,7 @@ const TermsOfService = () => {
                     3.3 Multiple Roles
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    You may maintain multiple roles (Founder, Expert, Investor, Agency) on the platform, subject to our policies and verification requirements.
+                    You may maintain multiple roles (Founder, Expert, Investor, Co-founder) on the platform, subject to our policies and verification requirements.
                   </p>
                 </div>
               </div>

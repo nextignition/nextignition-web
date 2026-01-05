@@ -29,7 +29,7 @@ const features = [
   {
     icon: Repeat2,
     title: "Switch Role Feature",
-    description: "One account, multiple roles. Seamlessly switch between Founder, Expert, Investor, and Agency roles with one click. Maintain separate profiles for each role and access role specific features instantly.",
+    description: "One account, multiple roles. Seamlessly switch between Founder, Expert, Investor, and Co-founder roles with one click. Maintain separate profiles for each role and access role specific features instantly.",
   },
   {
     icon: MessageSquare,

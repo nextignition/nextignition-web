@@ -51,7 +51,7 @@ const HeroSection = () => {
               href="https://app.nextignition.com/(auth)/register"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-accent text-accent-foreground font-semibold text-base hover:bg-accent/90 shadow-accent transition-all duration-300 group"
+              className="w-full sm:w-auto sm:min-w-[180px] inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-accent text-accent-foreground font-semibold text-base hover:bg-accent/90 shadow-accent transition-all duration-300 group"
             >
               Join as Founder
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -60,7 +60,7 @@ const HeroSection = () => {
               href="https://app.nextignition.com/(auth)/register"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-background/10 backdrop-blur-sm border-2 border-primary-foreground/30 text-primary-foreground font-semibold text-base hover:bg-background/20 transition-all duration-300 group"
+              className="w-full sm:w-auto sm:min-w-[180px] inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-background/10 backdrop-blur-sm border-2 border-primary-foreground/30 text-primary-foreground font-semibold text-base hover:bg-background/20 transition-all duration-300 group"
             >
               Join as Co-founder
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -69,7 +69,7 @@ const HeroSection = () => {
               href="https://app.nextignition.com/(auth)/register"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-background/10 backdrop-blur-sm border-2 border-primary-foreground/30 text-primary-foreground font-semibold text-base hover:bg-background/20 transition-all duration-300 group"
+              className="w-full sm:w-auto sm:min-w-[180px] inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-background/10 backdrop-blur-sm border-2 border-primary-foreground/30 text-primary-foreground font-semibold text-base hover:bg-background/20 transition-all duration-300 group"
             >
               Join as Expert
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -78,7 +78,7 @@ const HeroSection = () => {
               href="https://app.nextignition.com/(auth)/register"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-background/10 backdrop-blur-sm border-2 border-primary-foreground/30 text-primary-foreground font-semibold text-base hover:bg-background/20 transition-all duration-300 group"
+              className="w-full sm:w-auto sm:min-w-[180px] inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-background/10 backdrop-blur-sm border-2 border-primary-foreground/30 text-primary-foreground font-semibold text-base hover:bg-background/20 transition-all duration-300 group"
             >
               Join as Investor
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

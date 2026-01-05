@@ -1,45 +1,4 @@
-import { Check, ArrowRight } from "lucide-react";
-
-const plans = [
-  {
-    name: "Free",
-    description: "Start your journey at no cost",
-    price: "$0",
-    period: "forever",
-    features: [
-      "Core features access",
-      "AI powered expert matching",
-      "Community feed access",
-      "Limited consultations (3 per month)",
-      "AI tools (limited usage)",
-      "Webinar access",
-      "Basic messaging",
-      "In app support",
-    ],
-    cta: "Start Free",
-    highlighted: false,
-  },
-  {
-    name: "Pro",
-    description: "Unlock advanced features",
-    price: "$49",
-    period: "per month",
-    features: [
-      "Everything in Free, plus:",
-      "Unlimited consultations",
-      "Advanced AI analytics",
-      "Enhanced startup visibility",
-      "Priority booking with experts",
-      "Marketplace access",
-      "Investor pitch ranking",
-      "Pitch performance metrics",
-      "Priority support",
-    ],
-    cta: "Upgrade to Pro",
-    highlighted: true,
-    badge: "Most Popular",
-  },
-];
+import { ArrowRight } from "lucide-react";
 
 const PricingSection = () => {
   return (
@@ -50,93 +9,38 @@ const PricingSection = () => {
             SIMPLE PRICING
           </span>
           <h2 className="text-display md:text-hero font-display font-bold text-foreground mb-6">
-            Start Free,{" "}
-            <span className="text-gradient">Upgrade When Ready</span>
+            Pricing Plans{" "}
+            <span className="text-gradient">Coming Soon</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Get access to all core features for free. Upgrade to Pro when you're ready to accelerate your growth.
+            We're putting the finishing touches on our pricing plans. Get started for free and stay tuned for exciting updates.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {plans.map((plan) => (
-            <div
-              key={plan.name}
-              className={`relative rounded-2xl p-8 md:p-10 ${
-                plan.highlighted
-                  ? "bg-gradient-to-br from-primary to-navy border-2 border-primary text-primary-foreground"
-                  : "bg-card border border-border"
-              } card-hover`}
-            >
-              {plan.badge && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-accent text-accent-foreground text-sm font-semibold">
-                  {plan.badge}
-                </div>
-              )}
-
-              <div className="mb-8">
-                <h3 className={`text-2xl font-display font-bold mb-2 ${
-                  plan.highlighted ? "text-primary-foreground" : "text-foreground"
-                }`}>
-                  {plan.name}
-                </h3>
-                <p className={plan.highlighted ? "text-primary-foreground/80" : "text-muted-foreground"}>
-                  {plan.description}
-                </p>
+        <div className="max-w-2xl mx-auto">
+          <div className="relative rounded-2xl p-12 md:p-16 bg-gradient-to-br from-primary/10 via-accent/5 to-primary/10 border-2 border-primary/20 text-center">
+            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMtOS45NDEgMC0xOCA4LjA1OS0xOCAxOHM4LjA1OSAxOCAxOCAxOCAxOC04LjA1OSAxOC0xOC04LjA1OS0xOC0xOC0xOHoiIHN0cm9rZT0icmdiYSgxMDIsMTAyLDI1NSwwLjA1KSIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9nPjwvc3Zn+')] opacity-30"></div>
+            <div className="relative z-10">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 text-accent text-sm font-semibold mb-6">
+                <span>Coming Soon</span>
               </div>
-
-              <div className="mb-8">
-                <span className={`text-5xl font-display font-bold ${
-                  plan.highlighted ? "text-primary-foreground" : "text-foreground"
-                }`}>
-                  {plan.price}
-                </span>
-                <span className={plan.highlighted ? "text-primary-foreground/80" : "text-muted-foreground"}>
-                  /{plan.period}
-                </span>
-              </div>
-
-              <ul className="space-y-3 mb-10">
-                {plan.features.map((feature) => (
-                  <li 
-                    key={feature} 
-                    className="group flex items-start gap-3 p-2.5 rounded-lg bg-background/30 hover:bg-primary/5 transition-all duration-300 border border-transparent hover:border-primary/20"
-                  >
-                    <div className={`w-5 h-5 rounded-md flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
-                      plan.highlighted 
-                        ? "bg-accent/20 group-hover:bg-accent" 
-                        : "bg-primary/20 group-hover:bg-primary"
-                    }`}>
-                      <Check className={`w-3.5 h-3.5 group-hover:scale-110 transition-transform duration-300 ${
-                        plan.highlighted 
-                          ? "text-accent group-hover:text-accent-foreground" 
-                          : "text-primary group-hover:text-primary-foreground"
-                      }`} />
-                    </div>
-                    <span className={`text-sm font-medium leading-relaxed group-hover:text-primary transition-colors duration-300 ${
-                      plan.highlighted ? "text-primary-foreground/90" : "text-foreground"
-                    }`}>
-                      {feature}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-
+              <h3 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
+                Pricing Plans Launching Soon
+              </h3>
+              <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
+                We're working on flexible pricing options that work for everyone. In the meantime, all core features are available for free.
+              </p>
               <a
                 href="https://app.nextignition.com/(auth)/register"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`w-full inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold transition-all duration-300 group ${
-                  plan.highlighted
-                    ? "bg-accent text-accent-foreground hover:bg-accent/90 shadow-accent"
-                    : "bg-primary text-primary-foreground hover:bg-primary-dark shadow-brand"
-                }`}
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold hover:bg-primary-dark shadow-brand transition-all duration-300 group"
               >
-                {plan.cta}
+                Get Started Free
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>
