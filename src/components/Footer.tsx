@@ -1,195 +1,306 @@
-import { Linkedin, Instagram, ArrowRight } from "lucide-react";
-import logoSecondary from "@/assets/logo-secondary.png";
+import { motion } from 'motion/react';
+import { ArrowRight, Twitter, Mail, Linkedin, Facebook, Instagram, Github } from 'lucide-react';
+import { brandColors } from '../utils/colors';
+import logoImage from 'figma:asset/744162bc82319afa7a749a9a028b8441f984363d.png';
+import { OrangeGlobe } from './OrangeGlobe';
 
-const footerLinks = {
-  product: [
-    { label: "Features", href: "#features" },
-    { label: "How it Works", href: "#how-it-works" },
-    { label: "AI Tools", href: "#ai-tools" },
-    { label: "Webinars", href: "#webinars" },
-    { label: "Pricing", href: "#pricing" },
-  ],
-  resources: [
-    { label: "Industry Community", href: "#industry-community" },
-    { label: "Growth Tracking", href: "#growth-tracking" },
-    { label: "Security", href: "#security" },
-    { label: "Testimonials", href: "#testimonials" },
-    { label: "Why Choose Us", href: "#why-choose" },
-  ],
-  company: [
-    { label: "About", href: "#about" },
-    { label: "Roles", href: "#roles" },
-    { label: "After Signup", href: "#after-signup" },
-    { label: "FAQ", href: "#faq" },
-  ],
-  legal: [
-    { label: "Privacy Policy", href: "/privacy-policy" },
-    { label: "Terms of Service", href: "/terms-of-service" },
-    { label: "Cookie Policy", href: "/cookie-policy" },
-  ],
-};
+export function Footer() {
+  const productLinks = [
+    { label: 'Features', href: '#features' },
+    { label: 'How it Works', href: '#how-it-works' },
+    { label: 'AI Tools', href: '#ai-tools' },
+    { label: 'Webinars', href: '#webinars' },
+    { label: 'Pricing', href: '#pricing' },
+  ];
 
-const socialLinks = [
-  { icon: Linkedin, href: "https://www.linkedin.com/company/nextignition-official/", label: "LinkedIn" },
-  { icon: "X", href: "https://x.com/next_ignition?s=11", label: "X" },
-  { icon: Instagram, href: "https://www.instagram.com/next.ignition?igsh=ZnZ4N2ZmdHJvMHpo&utm_source=qr", label: "Instagram" },
-];
+  const resourceLinks = [
+    { label: 'Industry Community', href: '#community' },
+    { label: 'Growth Tracking', href: '#growth' },
+    { label: 'Security', href: '#security' },
+    { label: 'Testimonials', href: '#testimonials' },
+    { label: 'Why Choose Us', href: '#why-choose' },
+  ];
 
-const Footer = () => {
+  const companyLinks = [
+    { label: 'About', href: '#about' },
+    { label: 'Roles', href: '#roles' },
+    { label: 'Contact', href: '#contact' },
+    { label: 'After Signup', href: '#after-signup' },
+    { label: 'FAQ', href: '#faq' },
+  ];
+
+  const legalLinks = [
+    { label: 'Privacy Policy', href: '#privacy' },
+    { label: 'Terms of Service', href: '#terms' },
+    { label: 'Cookie Policy', href: '#cookie-policy' },
+  ];
+
   return (
-    <footer className="bg-navy text-navy-foreground">
-      {/* Newsletter Section */}
-      <div className="border-b border-navy-foreground/10">
-        <div className="container py-16">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
-            <div className="max-w-lg">
-              <h3 className="text-2xl md:text-3xl font-display font-bold mb-3">
-                Stay in the Loop
-              </h3>
-              <p className="text-navy-foreground/70">
-                Get startup tips, platform updates, and exclusive content delivered to your inbox.
-              </p>
-            </div>
-            <form className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="px-5 py-3.5 rounded-xl bg-navy-foreground/10 border border-navy-foreground/20 text-navy-foreground placeholder:text-navy-foreground/50 focus:outline-none focus:ring-2 focus:ring-accent w-full sm:w-80"
-              />
+    <footer className="relative bg-[#1a1a1a] text-white overflow-hidden">
+      {/* Decorative Background Elements */}
+      <div className="absolute inset-0 pointer-events-none opacity-5">
+        <motion.div
+          className="absolute top-20 left-20 w-64 h-64 rounded-full"
+          style={{ backgroundColor: brandColors.electricBlue }}
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.05, 0.1, 0.05],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        <motion.div
+          className="absolute bottom-40 right-20 w-96 h-96 rounded-full"
+          style={{ backgroundColor: brandColors.atomicOrange }}
+          animate={{
+            scale: [1, 1.3, 1],
+            opacity: [0.05, 0.08, 0.05],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2
+          }}
+        />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-8">
+        {/* Newsletter Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="py-16 border-b border-gray-800"
+        >
+          <div className="max-w-2xl mx-auto text-center">
+            <h3 className="text-3xl font-bold mb-3">Stay in the Loop</h3>
+            <p className="text-gray-400 text-base mb-8">
+              Get startup tips, platform updates, and exclusive content delivered to your inbox.
+            </p>
+
+            <div className="flex gap-3 max-w-md mx-auto">
+              <div className="relative flex-1">
+                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500" />
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="w-full pl-12 pr-4 py-3.5 rounded-full bg-[#2a2a2a] border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-gray-600 transition-colors"
+                />
+              </div>
               <button
-                type="submit"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-accent text-accent-foreground font-semibold hover:bg-accent/90 transition-colors whitespace-nowrap"
+                className="px-8 py-3.5 rounded-full font-bold text-white hover:shadow-2xl transition-all group flex items-center gap-2"
+                style={{
+                  background: `linear-gradient(135deg, ${brandColors.atomicOrange}, ${brandColors.electricBlue})`
+                }}
               >
                 Subscribe
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
-            </form>
+            </div>
           </div>
-        </div>
-      </div>
+        </motion.div>
 
-      {/* Main Footer */}
-      <div className="container py-16">
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-8 lg:gap-12">
-          {/* Brand */}
-          <div className="col-span-2">
-            <a href="/" className="flex items-center gap-2 mb-6">
-              <img src={logoSecondary} alt="NextIgnition Logo" className="h-10 w-auto" />
-            </a>
-            <p className="text-navy-foreground/70 mb-6 max-w-sm leading-relaxed">
-              Founded to empower early stage founders, NextIgnition solves real startup challenges with mentorship, AI, and a global community.
-            </p>
-            <div className="flex items-center gap-3">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative w-11 h-11 rounded-xl bg-navy-foreground/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/20"
-                  aria-label={social.label}
-                >
-                  {typeof social.icon === 'string' ? (
-                    <span className="text-lg font-bold transition-transform duration-300 group-hover:scale-110">{social.icon}</span>
-                  ) : (
-                    <social.icon className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
-                  )}
-                  {/* Glow effect on hover */}
-                  <div className="absolute inset-0 rounded-xl bg-primary/20 opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-300"></div>
-                </a>
+        {/* Main Footer Content */}
+        <div className="py-16 grid grid-cols-12 gap-6 lg:gap-12 relative">
+          {/* Brand Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="col-span-12 lg:col-span-4 relative z-20"
+          >
+            <div className="flex items-center gap-2 mb-[32px] mt-[0px] mr-[0px] ml-[0px]">
+              <img 
+                src={logoImage} 
+                alt="NextIgnition Logo" 
+                className=""
+                style={{ width: '50%' }}
+              />
+            </div>
+
+            {/* Social Links */}
+            <div className="flex items-center gap-3 relative z-20">
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-[#2a2a2a] hover:bg-[#3a3a3a] flex items-center justify-center transition-colors group"
+              >
+                <Twitter className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-[#2a2a2a] hover:bg-[#3a3a3a] flex items-center justify-center transition-colors group"
+              >
+                <Linkedin className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-[#2a2a2a] hover:bg-[#3a3a3a] flex items-center justify-center transition-colors group"
+              >
+                <Facebook className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-[#2a2a2a] hover:bg-[#3a3a3a] flex items-center justify-center transition-colors group"
+              >
+                <Instagram className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-[#2a2a2a] hover:bg-[#3a3a3a] flex items-center justify-center transition-colors group"
+              >
+                <Github className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
+              </a>
+            </div>
+          </motion.div>
+
+          {/* Product Links */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="col-span-6 lg:col-span-2 relative z-20"
+          >
+            <h4 className="font-bold text-sm mb-4" style={{ color: brandColors.electricBlue }}>
+              Product
+            </h4>
+            <ul className="space-y-3 relative z-20">
+              {productLinks.map((link, index) => (
+                <li key={index}>
+                  <a
+                    href={link.href}
+                    className="text-sm text-gray-400 hover:text-white transition-colors inline-flex items-center gap-2 group"
+                  >
+                    {link.label}
+                    <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                  </a>
+                </li>
               ))}
+            </ul>
+          </motion.div>
+
+          {/* Resources Links */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="col-span-6 lg:col-span-2 relative z-20"
+          >
+            <h4 className="font-bold text-sm mb-4" style={{ color: brandColors.atomicOrange }}>
+              Resources
+            </h4>
+            <ul className="space-y-3 relative z-20">
+              {resourceLinks.map((link, index) => (
+                <li key={index}>
+                  <a
+                    href={link.href}
+                    className="text-sm text-gray-400 hover:text-white transition-colors inline-flex items-center gap-2 group"
+                  >
+                    {link.label}
+                    <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Company Links */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="col-span-6 lg:col-span-2 relative z-20"
+          >
+            <h4 className="font-bold text-sm mb-4" style={{ color: brandColors.electricBlue }}>
+              Company
+            </h4>
+            <ul className="space-y-3 relative z-20">
+              {companyLinks.map((link, index) => (
+                <li key={index}>
+                  <a
+                    href={link.href}
+                    className="text-sm text-gray-400 hover:text-white transition-colors inline-flex items-center gap-2 group"
+                  >
+                    {link.label}
+                    <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Legal Links */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="col-span-6 lg:col-span-2 relative z-20"
+          >
+            <h4 className="font-bold text-sm mb-4" style={{ color: brandColors.atomicOrange }}>
+              Legal
+            </h4>
+            <ul className="space-y-3 relative z-20">
+              {legalLinks.map((link, index) => (
+                <li key={index}>
+                  <a
+                    href={link.href}
+                    className="text-sm text-gray-400 hover:text-white transition-colors inline-flex items-center gap-2 group"
+                  >
+                    {link.label}
+                    <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        </div>
+
+        {/* Bottom Bar */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="py-8 border-t border-gray-800 flex items-center justify-between relative"
+        >
+          {/* Orange Globe Background - Desktop */}
+          <div className="hidden lg:block absolute w-[250px] h-[250px] lg:w-[600px] lg:h-[600px] bottom-0 right-1/2 translate-x-[-130%] translate-y-[50%] lg:right-0 z-0">
+            <div className="w-full h-[400px]">
+              <OrangeGlobe opacity={0.5} />
             </div>
           </div>
 
-          {/* Product Links */}
-          <div>
-            <h4 className="font-semibold text-navy-foreground mb-4">Product</h4>
-            <ul className="space-y-3">
-              {footerLinks.product.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-navy-foreground/70 hover:text-navy-foreground transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+          {/* Orange Globe Background - Mobile */}
+          <div className="block lg:hidden absolute w-[320px] h-[320px] bottom-0 left-1/2 -translate-x-[130%] translate-y-[20%] z-0">
+            <div className="w-full h-[400px]">
+              <OrangeGlobe opacity={0.6} />
+            </div>
           </div>
-
-          {/* Resources Links */}
-          <div>
-            <h4 className="font-semibold text-navy-foreground mb-4">Resources</h4>
-            <ul className="space-y-3">
-              {footerLinks.resources.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-navy-foreground/70 hover:text-navy-foreground transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Company Links */}
-          <div>
-            <h4 className="font-semibold text-navy-foreground mb-4">Company</h4>
-            <ul className="space-y-3">
-              {footerLinks.company.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-navy-foreground/70 hover:text-navy-foreground transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Legal Links */}
-          <div>
-            <h4 className="font-semibold text-navy-foreground mb-4">Legal</h4>
-            <ul className="space-y-3">
-              {footerLinks.legal.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-navy-foreground/70 hover:text-navy-foreground transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      {/* Bottom Bar */}
-      <div className="border-t border-navy-foreground/10">
-        <div className="container py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-navy-foreground/60">
+          
+          <p className="text-sm text-[rgb(255,255,255)] relative z-10">
             © 2025 NextIgnition. All rights reserved.
           </p>
-          <a
-            href="https://app.nextignition.com/(auth)/register"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary-dark transition-colors group"
+
+          <button
+            className="px-6 py-2.5 rounded-full font-bold text-sm hover:shadow-xl transition-all group flex items-center gap-2 relative z-10"
+            style={{
+              backgroundColor: brandColors.atomicOrange
+            }}
           >
             Launch App
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-          </a>
-        </div>
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </button>
+        </motion.div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

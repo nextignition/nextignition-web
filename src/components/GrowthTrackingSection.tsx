@@ -1,129 +1,352 @@
-import { TrendingUp, Target, Award, BarChart3, ArrowRight } from "lucide-react";
+import { motion } from 'motion/react';
+import { TrendingUp, Target, Award, BarChart3, DollarSign, Users, Network, Presentation, Trophy } from 'lucide-react';
+import { brandColors } from '../utils/colors';
 
-const trackingFeatures = [
-  {
-    icon: TrendingUp,
-    title: "Milestone Tracking",
-    description: "Set and track your startup milestones from idea to launch and beyond.",
-  },
-  {
-    icon: Target,
-    title: "Goal Setting",
-    description: "Define your goals and monitor progress with visual dashboards.",
-  },
-  {
-    icon: Award,
-    title: "Achievement Badges",
-    description: "Earn badges as you complete milestones and reach important goals.",
-  },
-  {
-    icon: BarChart3,
-    title: "Performance Insights",
-    description: "Get actionable insights from your growth metrics and analytics.",
-  },
-];
+export function GrowthTrackingSection() {
+  const trackingFeatures = [
+    {
+      number: '01',
+      icon: Target,
+      title: 'Milestone Tracking',
+      description: 'Set and track your startup milestones from idea to launch and beyond.',
+      color: brandColors.atomicOrange,
+      graphicType: 'milestones',
+    },
+    {
+      number: '02',
+      icon: BarChart3,
+      title: 'Goal Setting',
+      description: 'Define your goals and monitor progress with visual dashboards.',
+      color: brandColors.electricBlue,
+      graphicType: 'progress',
+    },
+    {
+      number: '03',
+      icon: Award,
+      title: 'Achievement Badges',
+      description: 'Earn badges as you complete milestones and reach important goals.',
+      color: brandColors.navyBlue,
+      graphicType: 'badges',
+    },
+    {
+      number: '04',
+      icon: TrendingUp,
+      title: 'Performance Insights',
+      description: 'Get actionable insights from your growth metrics and analytics.',
+      color: brandColors.atomicOrange,
+      graphicType: 'insights',
+    },
+  ];
 
-const trackableItems = [
-  "Funding progress",
-  "Mentor sessions completed",
-  "Network growth",
-  "Pitch improvements",
-  "Milestone achievements",
-];
+  const trackingItems = [
+    { icon: DollarSign, text: 'Funding progress', color: brandColors.atomicOrange },
+    { icon: Users, text: 'Mentor sessions completed', color: brandColors.electricBlue },
+    { icon: Network, text: 'Network growth', color: brandColors.navyBlue },
+    { icon: Presentation, text: 'Pitch improvements', color: brandColors.atomicOrange },
+    { icon: Trophy, text: 'Milestone achievements', color: brandColors.electricBlue },
+  ];
 
-const GrowthTrackingSection = () => {
   return (
-    <section id="growth-tracking" className="py-24 md:py-32 bg-background">
-      <div className="container">
-        <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
-          <span className="inline-flex items-center px-6 py-3 rounded-full bg-primary/10 text-primary text-xs font-badge font-semibold tracking-wider uppercase mb-6">
+    <section id="growth" className="relative bg-[rgb(255,255,255)] py-[48px] overflow-hidden px-[0px]">
+      {/* Continue Vertical Dashed Lines */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <div className="max-w-7xl mx-auto h-full relative px-8">
+          <svg className="absolute left-[calc(25%+2rem)] top-0 h-full w-px" preserveAspectRatio="none">
+            <line 
+              x1="0" 
+              y1="0" 
+              x2="0" 
+              y2="100%" 
+              stroke="#d1d5db" 
+              strokeWidth="2" 
+              strokeDasharray="8 4"
+              opacity="0.4"
+              vectorEffect="non-scaling-stroke"
+            />
+          </svg>
+          <svg className="absolute left-[calc(50%+2rem)] top-0 h-full w-px" preserveAspectRatio="none">
+            <line 
+              x1="0" 
+              y1="0" 
+              x2="0" 
+              y2="100%" 
+              stroke="#d1d5db" 
+              strokeWidth="2" 
+              strokeDasharray="8 4"
+              opacity="0.4"
+              vectorEffect="non-scaling-stroke"
+            />
+          </svg>
+          <svg className="absolute left-[calc(75%+2rem)] top-0 h-full w-px" preserveAspectRatio="none">
+            <line 
+              x1="0" 
+              y1="0" 
+              x2="0" 
+              y2="100%" 
+              stroke="#d1d5db" 
+              strokeWidth="2" 
+              strokeDasharray="8 4"
+              opacity="0.4"
+              vectorEffect="non-scaling-stroke"
+            />
+          </svg>
+        </div>
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto p-[32px] bg-[rgba(255,255,255,0.05)]">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mb-12"
+        >
+          <div 
+            className="inline-block px-4 py-2 rounded-full text-xs font-semibold tracking-wide uppercase mb-6"
+            style={{ 
+              backgroundColor: `${brandColors.electricBlue}22`,
+              color: brandColors.electricBlue 
+            }}
+          >
             GROWTH TRACKING
-          </span>
-          <h2 className="text-display md:text-hero font-display font-bold text-foreground mb-6">
-            Monitor Your{" "}
-            <span className="text-gradient">Progress</span>
+          </div>
+          <h2 className="text-5xl leading-tight tracking-tight mb-4">
+            Monitor Your Progress
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-lg text-gray-600 max-w-3xl">
             Track your startup journey with comprehensive dashboards, milestone tracking, and performance insights.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12">
-          {trackingFeatures.map((feature, index) => (
-            <div
-              key={feature.title}
-              className="group relative bg-card rounded-3xl p-8 border-2 border-border/30 card-hover card-tilt card-shimmer relative overflow-hidden card-reveal"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-primary/10 rounded-3xl" style={{
-                  backgroundSize: '200% 200%',
-                  animation: 'gradient 8s ease infinite'
-                }}></div>
-              </div>
-              
-              <div className="relative z-10">
-                <div className="w-14 h-14 rounded-xl bg-primary/10 group-hover:bg-primary flex items-center justify-center mb-6 transition-all duration-500">
-                  <feature.icon className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-all duration-500" />
-                </div>
-                <h3 className="text-xl font-display font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
-                  {feature.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">
-                  {feature.description}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
+        {/* 4 Core Features Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mb-12"
+        >
+          <div 
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-full text-white font-semibold"
+            style={{ backgroundColor: brandColors.black }}
+          >
+            <span className="text-2xl">4</span>
+            <span className="text-sm">Core Features</span>
+          </div>
+        </motion.div>
 
-        <div className="relative">
-          <div className="bg-card rounded-3xl p-8 md:p-12 border-2 border-border/30">
-            <div className="text-center mb-12">
-              <h3 className="text-3xl font-display font-bold text-foreground mb-3">
-                What You Can Track
-              </h3>
-              <p className="text-muted-foreground">Monitor every aspect of your startup journey</p>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-3">
-              {trackableItems.map((item, index) => (
-                <div 
-                  key={index} 
-                  className="group relative"
-                >
-                  <div className="relative h-full p-6 rounded-2xl bg-gradient-to-br from-background to-background/50 border-2 border-border/30 hover:border-primary/50 transition-all duration-500 overflow-hidden">
-                    {/* Background gradient on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    
-                    {/* Number indicator */}
-                    <div className="relative mb-4">
-                      <div className="inline-flex items-center gap-2">
-                        <span className="text-2xl font-display font-bold text-primary/30 group-hover:text-primary/60 transition-colors duration-300">
-                          {String(index + 1).padStart(2, '0')}
-                        </span>
-                        <div className="h-px flex-1 bg-border/50 group-hover:bg-primary/30 transition-colors duration-300"></div>
+        {/* Features Grid - 4 Columns */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-16">
+          {trackingFeatures.map((feature, index) => {
+            const Icon = feature.icon;
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 * index }}
+                className="bg-gray-50 rounded-2xl p-6 relative overflow-hidden group hover:shadow-lg transition-shadow h-[380px] flex flex-col"
+              >
+                <div className="relative z-10 flex flex-col h-full">
+                  {/* Number Badge */}
+                  <div 
+                    className="inline-block px-3 py-1 rounded-full text-white text-xs font-bold mb-3 self-start"
+                    style={{ backgroundColor: feature.color }}
+                  >
+                    {feature.number}
+                  </div>
+
+                  {/* Icon and Title */}
+                  <div className="flex items-start gap-3 mb-3">
+                    <div 
+                      className="p-2 rounded-lg"
+                      style={{ backgroundColor: `${feature.color}22` }}
+                    >
+                      <Icon 
+                        className="w-5 h-5" 
+                        style={{ color: feature.color }}
+                      />
+                    </div>
+                    <h3 className="text-base font-semibold leading-tight pt-1 flex-1">
+                      {feature.title}
+                    </h3>
+                  </div>
+                  
+                  {/* Description */}
+                  <p className="text-gray-700 leading-relaxed text-xs mb-4">
+                    {feature.description}
+                  </p>
+
+                  {/* Graphical Elements */}
+                  <div className="mt-auto">
+                    {feature.graphicType === 'milestones' && (
+                      <div className="bg-white rounded-xl p-3">
+                        <div className="flex items-center justify-between mb-3">
+                          <span className="text-xs text-gray-500">Progress</span>
+                          <span className="text-xs font-bold">6/10 Complete</span>
+                        </div>
+                        <div className="space-y-2">
+                          {[true, true, true, true, true, true, false, false, false, false].map((complete, i) => (
+                            <div key={i} className="flex items-center gap-2">
+                              <div 
+                                className="w-3 h-3 rounded-full border-2 flex items-center justify-center"
+                                style={{ 
+                                  borderColor: complete ? feature.color : '#d1d5db',
+                                  backgroundColor: complete ? feature.color : 'transparent'
+                                }}
+                              >
+                                {complete && <div className="w-1.5 h-1.5 bg-white rounded-full" />}
+                              </div>
+                              <div className="flex-1 h-1 bg-gray-100 rounded" />
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                    </div>
+                    )}
                     
-                    {/* Content */}
-                    <div className="relative">
-                      <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors duration-300 leading-relaxed">
-                        {item}
-                      </p>
-                    </div>
+                    {feature.graphicType === 'progress' && (
+                      <div className="bg-white rounded-xl p-3">
+                        <div className="flex justify-between items-center mb-2">
+                          <span className="text-xs text-gray-500">Goal Completion</span>
+                          <span className="text-2xl font-bold" style={{ color: feature.color }}>82%</span>
+                        </div>
+                        <div className="space-y-1.5">
+                          {[82, 65, 90].map((val, i) => (
+                            <div key={i} className="flex items-center gap-2">
+                              <span className="text-[9px] text-gray-400 w-8">Q{i + 1}</span>
+                              <div className="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden">
+                                <motion.div 
+                                  initial={{ width: 0 }}
+                                  whileInView={{ width: `${val}%` }}
+                                  viewport={{ once: true }}
+                                  transition={{ duration: 1, delay: 0.5 + i * 0.1 }}
+                                  className="h-full rounded-full" 
+                                  style={{ backgroundColor: feature.color }}
+                                />
+                              </div>
+                              <span className="text-[9px] text-gray-600 w-8 text-right">{val}%</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                     
-                    {/* Corner accent */}
-                    <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-primary/0 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-bl-2xl"></div>
+                    {feature.graphicType === 'badges' && (
+                      <div className="bg-white rounded-xl p-3">
+                        <div className="grid grid-cols-3 gap-2 mb-2">
+                          {[1, 2, 3, 4, 5, 6].map((i) => (
+                            <motion.div
+                              key={i}
+                              initial={{ scale: 0 }}
+                              whileInView={{ scale: 1 }}
+                              viewport={{ once: true }}
+                              transition={{ duration: 0.4, delay: 0.6 + i * 0.05 }}
+                              className="aspect-square rounded-lg flex items-center justify-center"
+                              style={{ 
+                                backgroundColor: i <= 4 ? `${feature.color}22` : '#f3f4f6'
+                              }}
+                            >
+                              {i <= 4 && <Award className="w-5 h-5" style={{ color: feature.color }} />}
+                            </motion.div>
+                          ))}
+                        </div>
+                        <div className="text-[10px] text-gray-500 text-center">4/6 badges earned</div>
+                      </div>
+                    )}
+                    
+                    {feature.graphicType === 'insights' && (
+                      <div className="bg-white rounded-xl p-3 space-y-2">
+                        <div className="flex items-center gap-2">
+                          <div className="flex-1 h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                            <div className="h-full rounded-full" style={{ width: '75%', backgroundColor: feature.color }} />
+                          </div>
+                          <span className="text-xs font-bold">75%</span>
+                        </div>
+                        <div className="flex gap-1">
+                          {[4, 5, 3, 6, 4, 7, 5].map((height, i) => (
+                            <div 
+                              key={i} 
+                              className="flex-1 rounded-t"
+                              style={{ 
+                                height: `${height * 5}px`,
+                                backgroundColor: i === 6 ? feature.color : feature.color + '44'
+                              }}
+                            />
+                          ))}
+                        </div>
+                        <div className="text-[10px] text-gray-500">+32% growth this quarter</div>
+                      </div>
+                    )}
                   </div>
                 </div>
-              ))}
-            </div>
-          </div>
+                
+                {/* Gradient background - appears on hover */}
+                <div 
+                  className="absolute bottom-0 left-0 right-0 h-32 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
+                  style={{
+                    background: `linear-gradient(to top, ${feature.color}22, transparent)`
+                  }}
+                ></div>
+              </motion.div>
+            );
+          })}
         </div>
+
+        {/* What You Can Track Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mb-8"
+        >
+          <h3 className="text-2xl font-bold mb-3">
+            What You Can Track
+          </h3>
+          <p className="text-gray-600 text-base mb-8">
+            Monitor every aspect of your startup journey
+          </p>
+
+          {/* 5 Tracking Items in horizontal layout */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            {trackingItems.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.1 * index }}
+                  className="bg-gray-50 rounded-2xl p-5 text-center hover:shadow-md transition-shadow group"
+                >
+                  <motion.div
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.6 }}
+                    className="w-12 h-12 mx-auto mb-3 rounded-xl flex items-center justify-center"
+                    style={{ backgroundColor: `${item.color}22` }}
+                  >
+                    <Icon className="w-6 h-6" style={{ color: item.color }} />
+                  </motion.div>
+                  
+                  <div 
+                    className="w-8 h-8 mx-auto mb-2 rounded-full flex items-center justify-center font-bold text-white text-sm"
+                    style={{ backgroundColor: item.color }}
+                  >
+                    {String(index + 1).padStart(2, '0')}
+                  </div>
+                  
+                  <p className="text-xs font-medium text-gray-800 leading-tight">
+                    {item.text}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
-};
-
-export default GrowthTrackingSection;
-
+}

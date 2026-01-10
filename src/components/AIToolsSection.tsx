@@ -1,117 +1,266 @@
-import { BrainCircuit, UserRoundPen, FileSliders, ArrowRight } from "lucide-react";
+import { motion } from 'motion/react';
+import { Sparkles, ArrowRight, FileText, UserCircle, Presentation } from 'lucide-react';
+import { brandColors } from '../utils/colors';
 
-const aiTools = [
-  {
-    icon: BrainCircuit,
-    title: "Startup Summary Generator",
-    description: "Transform your complex startup idea into a compelling, investor ready summary in seconds. Input your startup idea and get a concise, professional summary optimized for investor pitches. Save time and improve clarity.",
-    example: "\"Turn your 10 page plan into a punchy 2 paragraph pitch\"",
-  },
-  {
-    icon: UserRoundPen,
-    title: "Profile Summarizer",
-    description: "Create compelling profiles automatically. Transform your profile for maximum visibility, optimize for investor appeal, highlight key achievements, and get professional formatting.",
-    example: "\"Highlight your strengths for maximum impact\"",
-  },
-  {
-    icon: FileSliders,
-    title: "Pitch Deck Summarizer",
-    description: "Extract insights from your pitch deck. Upload your pitch deck and get key highlights automatically. Identify strengths and gaps, and generate executive summaries.",
-    example: "\"Know your deck's strengths and weaknesses\"",
-  },
-];
+export function AIToolsSection() {
+  const tools = [
+    {
+      icon: FileText,
+      number: '01',
+      title: 'Startup Summary Generator',
+      description: 'Transform your complex startup idea into a compelling, investor ready summary in seconds. Input your startup idea and get a concise, professional summary optimized for investor pitches. Save time and improve clarity.',
+      quote: '"Turn your 10 page plan into a punchy 2 paragraph pitch"',
+      color: brandColors.atomicOrange,
+    },
+    {
+      icon: UserCircle,
+      number: '02',
+      title: 'Profile Summarizer',
+      description: 'Create compelling profiles automatically. Transform your profile for maximum visibility, optimize for investor appeal, highlight key achievements, and get professional formatting.',
+      quote: '"Highlight your strengths for maximum impact"',
+      color: brandColors.electricBlue,
+    },
+    {
+      icon: Presentation,
+      number: '03',
+      title: 'Pitch Deck Summarizer',
+      description: 'Extract insights from your pitch deck. Upload your pitch deck and get key highlights automatically. Identify strengths and gaps, and generate executive summaries.',
+      quote: '"Know your deck\'s strengths and weaknesses"',
+      color: brandColors.navyBlue,
+    },
+  ];
 
-const AIToolsSection = () => {
   return (
-    <section id="ai-tools" className="py-24 md:py-32 bg-background relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 -right-64 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 -left-64 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+    <section id="ai-tools" className="relative bg-white py-[48px] overflow-hidden px-[0px]">
+      {/* Continue Vertical Dashed Lines */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <div className="max-w-7xl mx-auto h-full relative px-8">
+          <svg className="absolute left-[calc(25%+2rem)] top-0 h-full w-px" preserveAspectRatio="none">
+            <line 
+              x1="0" 
+              y1="0" 
+              x2="0" 
+              y2="100%" 
+              stroke="#d1d5db" 
+              strokeWidth="2" 
+              strokeDasharray="8 4"
+              opacity="0.4"
+              vectorEffect="non-scaling-stroke"
+            />
+          </svg>
+          <svg className="absolute left-[calc(50%+2rem)] top-0 h-full w-px" preserveAspectRatio="none">
+            <line 
+              x1="0" 
+              y1="0" 
+              x2="0" 
+              y2="100%" 
+              stroke="#d1d5db" 
+              strokeWidth="2" 
+              strokeDasharray="8 4"
+              opacity="0.4"
+              vectorEffect="non-scaling-stroke"
+            />
+          </svg>
+          <svg className="absolute left-[calc(75%+2rem)] top-0 h-full w-px" preserveAspectRatio="none">
+            <line 
+              x1="0" 
+              y1="0" 
+              x2="0" 
+              y2="100%" 
+              stroke="#d1d5db" 
+              strokeWidth="2" 
+              strokeDasharray="8 4"
+              opacity="0.4"
+              vectorEffect="non-scaling-stroke"
+            />
+          </svg>
+        </div>
       </div>
 
-      <div className="container relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
-          <span className="inline-flex items-center px-6 py-3 rounded-full bg-primary/10 text-primary text-xs font-badge font-semibold tracking-wider uppercase mb-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-8">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mb-20"
+        >
+          <div 
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold tracking-wider mb-4"
+            style={{ 
+              backgroundColor: `${brandColors.electricBlue}22`,
+              color: brandColors.electricBlue 
+            }}
+          >
+            <Sparkles className="w-4 h-4" />
             AI POWERED
-          </span>
-          <h2 className="text-display md:text-hero font-display font-bold text-foreground mb-6">
-            Supercharge Your Startup with{" "}
-            <span className="text-gradient">AI Tools</span>
+          </div>
+          <h2 className="text-5xl leading-tight tracking-tight mb-4 max-w-2xl">
+            Supercharge Your Startup<br />
+            with AI Tools
           </h2>
-          <p className="text-lg text-muted-foreground">
-            Let AI handle the heavy lifting. Generate summaries, optimize profiles, and analyze pitch decks all built to help you move faster.
+          <p className="text-gray-600 text-lg max-w-2xl">
+            Let AI handle the heavy lifting. Generate summaries, optimize profiles, and analyze pitch decks — all built to help you move faster.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
-          {aiTools.map((tool, index) => (
-            <div
-              key={tool.title}
-              className="group relative bg-gradient-to-br from-card to-background rounded-3xl p-8 border-2 border-border/30 card-hover card-tilt card-shimmer overflow-hidden card-reveal"
-              style={{ animationDelay: `${index * 120}ms` }}
-            >
-              {/* Animated gradient border */}
-              <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/20 via-accent/10 to-primary/20" style={{
-                  backgroundSize: '200% 200%',
-                  animation: 'gradient 6s ease infinite'
-                }}></div>
-              </div>
+        {/* Tools List */}
+        <div className="space-y-16 mb-[32px] mt-[0px] mr-[0px] ml-[0px]">
+          {tools.map((tool, index) => {
+            const Icon = tool.icon;
+            const isEven = index % 2 === 0;
+            
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.1 * index }}
+                className="relative"
+              >
+                {/* Connecting Line */}
+                {index < tools.length - 1 && (
+                  <div 
+                    className="hidden lg:block absolute left-16 top-full w-0.5 h-16 -mt-0"
+                    style={{ 
+                      background: `linear-gradient(to bottom, ${tool.color}44, transparent)`
+                    }}
+                  />
+                )}
 
-              <div className="relative z-10">
-                {/* Icon with 3D effect */}
-                <div className="relative w-16 h-16 mb-6">
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center shadow-brand transform group-hover:rotate-y-12 group-hover:scale-110 transition-all duration-500" style={{
-                    transformStyle: 'preserve-3d'
-                  }}>
-                    <tool.icon className="w-8 h-8 text-primary-foreground transform group-hover:scale-110 transition-transform duration-500" />
+                <div className="flex flex-col lg:flex-row items-start gap-6 lg:gap-12">
+                  {/* Left: Heading Section */}
+                  <div className="flex-shrink-0 w-full lg:w-[400px]">
+                    {/* Large Number */}
+                    <motion.div
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+                      className="flex items-start gap-4 mb-4"
+                    >
+                      <span 
+                        className="text-7xl font-bold opacity-20 leading-none"
+                        style={{ color: tool.color }}
+                      >
+                        {tool.number}
+                      </span>
+                      <div 
+                        className="p-3 rounded-2xl mt-2"
+                        style={{ backgroundColor: `${tool.color}22` }}
+                      >
+                        <Icon className="w-8 h-8" style={{ color: tool.color }} />
+                      </div>
+                    </motion.div>
+
+                    <motion.h3 
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+                      className="text-3xl font-bold mb-3"
+                      style={{ color: tool.color }}
+                    >
+                      {tool.title}
+                    </motion.h3>
+
+                    {/* Accent Line */}
+                    <motion.div
+                      initial={{ width: 0 }}
+                      whileInView={{ width: '80px' }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.8, delay: 0.4 + index * 0.1 }}
+                      className="h-1 rounded-full mb-6"
+                      style={{ backgroundColor: tool.color }}
+                    />
                   </div>
-                  {/* Glow ring */}
-                  <div className="absolute -inset-2 rounded-2xl bg-primary/20 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500"></div>
+
+                  {/* Right: Content Section - Hidden on mobile */}
+                  <div className="hidden lg:block flex-1 pt-4">
+                    <motion.p
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
+                      className="text-gray-700 text-base leading-relaxed mb-6"
+                    >
+                      {tool.description}
+                    </motion.p>
+
+                    {/* Quote */}
+                    <motion.div
+                      initial={{ opacity: 0, x: 20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
+                      className="relative pl-6 mb-6"
+                    >
+                      <div 
+                        className="absolute left-0 top-0 bottom-0 w-1 rounded-full"
+                        style={{ backgroundColor: tool.color }}
+                      />
+                      <p 
+                        className="text-lg font-semibold italic"
+                        style={{ color: tool.color }}
+                      >
+                        {tool.quote}
+                      </p>
+                    </motion.div>
+
+                    {/* CTA Button */}
+                    <motion.button
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
+                      className="group inline-flex items-center gap-2 px-6 py-3 rounded-full text-white font-semibold text-sm hover:shadow-lg transition-all hover:gap-3"
+                      style={{ backgroundColor: tool.color }}
+                    >
+                      Try it Now
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </motion.button>
+                  </div>
                 </div>
 
-                <h3 className="text-xl font-display font-semibold text-foreground mb-3">
-                  {tool.title}
-                </h3>
-                
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  {tool.description}
-                </p>
-
-                <p className="text-sm text-primary italic mb-6 px-4 py-3 bg-primary/5 rounded-lg">
-                  {tool.example}
-                </p>
-
-                <a
-                  href="https://app.nextignition.com/(auth)/register"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary-dark transition-colors group/link"
-                >
-                  Try it Now
-                  <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
-                </a>
-              </div>
-            </div>
-          ))}
+                {/* Background Gradient Circle */}
+                <motion.div
+                  initial={{ scale: 0, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, delay: 0.2 + index * 0.1 }}
+                  className="absolute -z-10 w-64 h-64 rounded-full blur-3xl pointer-events-none"
+                  style={{ 
+                    background: `radial-gradient(circle, ${tool.color}15, transparent)`,
+                    top: '-50px',
+                    right: isEven ? '10%' : '30%',
+                  }}
+                />
+              </motion.div>
+            );
+          })}
         </div>
 
-        {/* CTA Banner */}
-        <div className="mt-16 text-center">
-          <a
-            href="https://app.nextignition.com/(auth)/register"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold hover:bg-primary-dark shadow-brand transition-all duration-300 group"
+        {/* Bottom CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="text-center pt-8 border-t-2 border-gray-200"
+        >
+          <button 
+            className="group inline-flex items-center gap-3 px-10 py-4 rounded-full text-white font-bold text-base hover:shadow-2xl transition-all hover:gap-4"
+            style={{ 
+              background: `linear-gradient(135deg, ${brandColors.atomicOrange}, ${brandColors.electricBlue})`
+            }}
           >
             Access All AI Tools Free
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </a>
-        </div>
+          </button>
+        </motion.div>
       </div>
     </section>
   );
-};
-
-export default AIToolsSection;
+}
