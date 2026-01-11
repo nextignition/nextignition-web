@@ -307,7 +307,8 @@ export function WhyChooseSection() {
           transition={{ duration: 0.6, delay: 0.9 }}
           className="text-center"
         >
-          <motion.button
+          <motion.a
+            href="https://app.nextignition.com/register"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center gap-3 px-8 py-4 rounded-full text-white font-bold text-lg shadow-lg relative overflow-hidden group"
@@ -334,7 +335,7 @@ export function WhyChooseSection() {
               whileHover={{ x: 0 }}
               transition={{ duration: 0.3 }}
             />
-          </motion.button>
+          </motion.a>
         </motion.div>
       </div>
     </section>

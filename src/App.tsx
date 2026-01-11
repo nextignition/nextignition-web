@@ -13,8 +13,6 @@ import { MissionSection } from './components/MissionSection';
 import { PricingSection } from './components/PricingSection';
 import { FAQSection } from './components/FAQSection';
 import { Footer } from './components/Footer';
-import { LoginPage } from './components/LoginPage';
-import { SignupPage } from './components/SignupPage';
 import { TermsPage } from './components/TermsPage';
 import { PrivacyPage } from './components/PrivacyPage';
 import { CookiePolicyPage } from './components/CookiePolicyPage';
@@ -25,13 +23,29 @@ export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
 
   useEffect(() => {
+    // Check hash immediately on mount and redirect if needed
+    const hash = window.location.hash.slice(1); // Remove the '#'
+    if (hash === 'login') {
+      // Redirect to app login page
+      window.location.replace('https://app.nextignition.com/login');
+      return;
+    } else if (hash === 'signup') {
+      // Redirect to app register page
+      window.location.replace('https://app.nextignition.com/register');
+      return;
+    }
+
     // Handle hash changes
     const handleHashChange = () => {
       const hash = window.location.hash.slice(1); // Remove the '#'
       if (hash === 'login') {
-        setCurrentPage('login');
+        // Redirect to app login page
+        window.location.replace('https://app.nextignition.com/login');
+        return;
       } else if (hash === 'signup') {
-        setCurrentPage('signup');
+        // Redirect to app register page
+        window.location.replace('https://app.nextignition.com/register');
+        return;
       } else if (hash === 'terms') {
         setCurrentPage('terms');
       } else if (hash === 'privacy') {
@@ -51,8 +65,10 @@ export default function App() {
     // Listen for hash changes
     window.addEventListener('hashchange', handleHashChange);
     
-    // Check initial hash
-    handleHashChange();
+    // Check initial hash (only if not login/signup)
+    if (hash !== 'login' && hash !== 'signup') {
+      handleHashChange();
+    }
 
     return () => {
       window.removeEventListener('hashchange', handleHashChange);
@@ -60,14 +76,7 @@ export default function App() {
   }, []);
 
   // Render based on current page
-  if (currentPage === 'login') {
-    return <LoginPage />;
-  }
-
-  if (currentPage === 'signup') {
-    return <SignupPage />;
-  }
-
+  // Note: login and signup now redirect to app.nextignition.com
   if (currentPage === 'terms') {
     return <TermsPage />;
   }

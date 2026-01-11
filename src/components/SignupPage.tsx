@@ -92,7 +92,7 @@ export function SignupPage() {
           <div className="flex items-center gap-3">
             <span className="text-sm text-gray-600">Already have an account?</span>
             <a
-              href="#login"
+              href="https://app.nextignition.com/login"
               className="px-5 py-2 text-sm font-medium border border-gray-300 rounded-full hover:bg-gray-100 bg-white"
             >
               Log In

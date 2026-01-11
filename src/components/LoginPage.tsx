@@ -61,7 +61,7 @@ export function LoginPage() {
           <div className="flex items-center gap-3">
             <span className="text-sm text-gray-600">Don't have an account?</span>
             <a
-              href="#signup"
+              href="https://app.nextignition.com/register"
               className="px-5 py-2 text-sm font-medium rounded-full transition-colors text-white"
               style={{ backgroundColor: brandColors.atomicOrange }}
             >

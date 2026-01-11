@@ -98,14 +98,15 @@ export function PricingSection() {
               In the meantime, all core features are available for free.
             </motion.p>
 
-            <motion.button
+            <motion.a
+              href="https://app.nextignition.com/register"
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.8 }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 lg:px-10 lg:py-4 text-white rounded-lg font-medium text-base lg:text-lg transition-opacity"
+              className="inline-block px-8 py-3 lg:px-10 lg:py-4 text-white rounded-lg font-medium text-base lg:text-lg transition-opacity"
               style={{
                 backgroundColor: brandColors.atomicOrange,
               }}
@@ -113,7 +114,7 @@ export function PricingSection() {
               onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
             >
               Get Started Free
-            </motion.button>
+            </motion.a>
 
             {/* Features List */}
             <motion.div

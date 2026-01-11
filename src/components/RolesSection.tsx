@@ -224,12 +224,13 @@ export function RolesSection() {
                 </div>
 
                 {/* CTA Button */}
-                <button 
-                  className="w-full py-3 rounded-full text-white font-semibold text-sm hover:shadow-lg transition-all hover:scale-105"
+                <a 
+                  href="https://app.nextignition.com/register"
+                  className="w-full py-3 rounded-full text-white font-semibold text-sm hover:shadow-lg transition-all hover:scale-105 text-center block"
                   style={{ backgroundColor: role.color }}
                 >
                   {role.buttonText}
-                </button>
+                </a>
 
                 {/* Gradient background - appears on hover */}
                 <div 
